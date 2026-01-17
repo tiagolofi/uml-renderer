@@ -1,0 +1,14 @@
+
+participant FileReader
+participant Board
+participant Canvas
+
+FileReader->Board: lê o arquivo
+
+note over Board: monta a lista de participantes e suas interações
+
+Board->Canvas: recebe uma lista de participantes
+
+note over Canvas: teste
+
+
