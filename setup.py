@@ -10,7 +10,7 @@ setup(
     packages=find_packages(),
     python_requires=">=3.9",
     install_requires=[
-        "python-dotenv", "pytest", "flask"
+        "python-dotenv", "pytest", "flask", "matplotlib"
     ],
     extras_require={
     },
