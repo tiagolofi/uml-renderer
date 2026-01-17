@@ -144,13 +144,13 @@ class Canvas():
             box = FancyBboxPatch(
                 (x - self.box_width/2, self.y_position - self.box_height/2),
                 self.box_width, self.box_height,
-                boxstyle="round,pad=0.05", 
+                boxstyle="round,pad=0.01", 
                 edgecolor='black', 
-                facecolor='lightblue',
-                linewidth=1.5
+                facecolor='white',
+                linewidth=1
             )
             self.ax.add_patch(box)
-            self.ax.text(x, self.y_position, name, ha='center', va='center', fontweight='bold')
+            self.ax.text(x, self.y_position, name, ha='center', va='center')
             
             # Desenha linha vertical para cada participante
             self.ax.plot([x, x], [self.y_position - self.box_height/2, 0], 'k--', linewidth=0.5, alpha=0.5)
@@ -195,8 +195,8 @@ class Canvas():
             (start_x, self.y_position),
             (end_x, self.y_position),
             arrowstyle=arrow_style,
-            mutation_scale=20,
-            linewidth=1.5,
+            mutation_scale=10,
+            linewidth=1,
             color='black'
         )
         self.ax.add_patch(arrow)
@@ -210,11 +210,11 @@ class Canvas():
         for i, line in enumerate(text_lines):
             y_offset = base_y_offset - (i * 0.2)
             self.ax.text(mid_x, self.y_position + y_offset, line, 
-                        ha='center', va='bottom', fontsize=9, style='italic')
+                        ha='center', va='bottom', fontsize=8)
         
         # Ajusta a altura da linha se houver múltiplas linhas
         if len(text_lines) > 1:
-            self.y_position -= (len(text_lines) - 1) * 0.2
+            self.y_position -= (len(text_lines) - 1) * 0.1
 
     def _draw_note(self, participant_name: str, note: Note):
         """Desenha uma nota sobre um participante"""
@@ -233,7 +233,7 @@ class Canvas():
         
         # Ajusta a altura da linha se houver múltiplas linhas
         if len(text_lines) > 1:
-            self.y_position -= (len(text_lines) - 1) * 0.2
+            self.y_position -= (len(text_lines) - 1) * 0.1
 
     def render(self, output_file: str = None):
         """Renderiza o diagrama e salva como imagem"""
