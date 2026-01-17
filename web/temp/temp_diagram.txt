@@ -9,6 +9,6 @@ note over Board: monta a lista de participantes e suas interações
 
 Board->Canvas: recebe uma lista de participantes
 
-note over Canvas: teste
+note over Canvas: monta a imagem
 
 
