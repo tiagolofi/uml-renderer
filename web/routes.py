@@ -1,7 +1,6 @@
+
 from flask import Blueprint, render_template, request, jsonify, send_file
 from uml import Board, Canvas, FileReader
-import os
-import io
 from pathlib import Path
 
 bp = Blueprint('main', __name__)
